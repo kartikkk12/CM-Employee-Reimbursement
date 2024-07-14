@@ -1,8 +1,8 @@
 # README
 
-*Employee Reimbursement Portal*
+# **Employee Reimbursement Portal**
 
-Main features:
+## Main features:
 
 1. Add Employees
 2. Edit Employees
@@ -11,7 +11,7 @@ Main features:
 5. View bills
 6. View Employees
 
-Database Schema:
+## Database Schema:
 
 - Department
   - Name
@@ -21,14 +21,14 @@ Database Schema:
   - Last Name
   - Email
   - Designation
-  -* Department  (foreign key association)
+  - Department  *(foreign key association)*
 
 - Bills
   - Amount
   - Type
-  -* Employee (foreign key association)
+  - Employee *(foreign key association)*
 
-Notes and future scope:
+## Notes and future scope:
 
 - Bill types can be easily extended for new types of bills in future (code is managed properly).
 - Employee deletion leads to deletion of bills created in name of that employee to avoid ghost data.
