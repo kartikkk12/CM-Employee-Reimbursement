@@ -30,6 +30,6 @@ Database Schema:
 
 Notes and future scope:
 
-Bill types can be easily extended for new types of bills in future (code is managed properly).
-Employee deletion leads to deletion of bills created in name of that employee to avoid ghost data.
-Department CRUD can be added.
+- Bill types can be easily extended for new types of bills in future (code is managed properly).
+- Employee deletion leads to deletion of bills created in name of that employee to avoid ghost data.
+- Department CRUD can be added.
