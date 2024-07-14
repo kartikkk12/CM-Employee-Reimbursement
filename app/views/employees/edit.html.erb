@@ -1,0 +1,53 @@
+<br/>
+<h1>Edit Employee</h1>
+
+<%= form_with(model: @employee, local: true) do |form| %>
+  <% if @employee.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h3>
+      <ul>
+        <% @employee.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row g-3 ">
+
+  <div class="field form-group col-md-4">
+    <%= form.label :first_name ,class: "form-label" %>
+    <%= form.text_field :first_name , { class: 'form-control' }%>
+  </div>
+
+  <div class="field form-group col-md-4">
+    <%= form.label :last_name ,class: "form-label"  %>
+    <%= form.text_field :last_name , { class: 'form-control' }%>
+  </div>
+
+  <div class="field form-group col-md-4">
+    <%= form.label :email ,class: "form-label" %>
+        <div class="input-group" >
+          <span class="input-group-text" id="inputGroupPrepend">@</span>
+
+    <%= form.email_field :email , { class: 'form-control' }%>
+    </div>
+  </div>
+
+  <div class="field form-group col-md-4">
+    <%= form.label :designation,class: "form-label"  %>
+    <%= form.text_field :designation , { class: 'form-control' }%>
+  </div>
+
+  <div class="field form-group col-md-4">
+    <%= form.label :department ,class: "form-label" %>
+  <%= form.collection_select :department_id, @departments, :id, :name, { prompt: 'Select a Department' }, { class: 'form-select' } %>
+
+  </div>
+    <br/>
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary"  %>
+  </div>
+  </div>
+<% end %>
+<br/>
+<%= link_to 'Back', employees_path,  class: "btn btn-secondary" %>

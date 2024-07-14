@@ -1,0 +1,39 @@
+<br/>
+<h1>Welcome to the Employee Reimbursement Portal</h1>
+
+<p>This is the landing page for the Employee Reimbursement Portal. From here, you can manage employees and bills.</p>
+
+<ul>
+  <li><%= link_to 'Create new Bill', new_bill_path %></li>
+  <li><%= link_to 'View submitted bills', new_employee_path %></li>
+  <li><%= link_to 'Add Employee', bills_path %></li>
+
+</ul>
+<br/>
+<h2>Employee List</h2>
+<br/>
+<table class="table table-striped table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>Full Name</th>
+      <th>Designation</th>
+      <th>Email</th>
+      <th>Department</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.full_name %></td>
+        <td><%= employee.designation %></td>
+        <td><%= employee.email %></td>
+        <td><%= employee.department.name %></td>
+        <td> 
+<%= link_to 'Edit', edit_employee_path(employee), class: "btn btn-primary" %> &nbsp;&nbsp; <%= link_to 'Delete', employee_path(employee), class: "btn btn-outline-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Employee', new_employee_path , class: "btn btn-primary"%>
