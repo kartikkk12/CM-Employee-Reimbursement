@@ -1,24 +1,35 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+*Employee Reimbursement Portal*
 
-Things you may want to cover:
+Main features:
 
-* Ruby version
+1. Add Employees
+2. Edit Employees
+3. Delete Employees
+4. Create bills
+5. View bills
+6. View Employees
 
-* System dependencies
+Database Schema:
 
-* Configuration
+- Department
+  - Name
+    
+- Employee
+  - First Name
+  - Last Name
+  - Email
+  - Designation
+  -* Department  (foreign key association)
 
-* Database creation
+- Bills
+  - Amount
+  - Type
+  -* Employee (foreign key association)
 
-* Database initialization
+Notes and future scope:
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Bill types can be easily extended for new types of bills in future (code is managed properly).
+Employee deletion leads to deletion of bills created in name of that employee to avoid ghost data.
+Department CRUD can be added.
