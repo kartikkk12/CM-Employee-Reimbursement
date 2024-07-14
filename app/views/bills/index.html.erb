@@ -1,0 +1,35 @@
+<br/>
+<h1>Submitted Bills</h1>
+<br/>
+<h3>Total Bill: <%= number_to_currency(@total_bills_amount, unit: '₹', format: '%u%n') %></h3>
+<h4>Total Bills Submitted: <%= @total_bills_count %></h4>
+
+
+
+
+<br/>
+<table class="table table-striped table-hover">
+  <thead class="table-dark g-4">
+    <tr>
+      <th>Type</th>
+      <th>Amount</th>
+      <th>Date of Submission</th>
+      <th>Submitted By</th>
+      <th>Department</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bills.each do |bill| %>
+      <tr>
+        <td><%= bill.type %></td>
+        <td><%= bill.amount %></td>
+        <td><%= bill.created_at.strftime("%Y-%m-%d") %></td>
+        <td><%= bill.employee.full_name %></td>
+        <td><%= bill.employee.department.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br/>
+<%= link_to 'New Bill', new_bill_path, class: "btn btn-primary" %>
+<%= link_to 'Back', employees_path,  class: "btn btn-secondary" %>
